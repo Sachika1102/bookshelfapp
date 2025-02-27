@@ -48,7 +48,7 @@ class CreateBookView(LoginRequiredMixin, generic.CreateView):
     fields = ('title', 'text', 'category','thumbnail')
     success_url = reverse_lazy('list-book')
 
-def form_valid(self, form):
+    def form_valid(self, form):
         form.instance.user = self.request.user  # ログイン中のユーザーを設定
         return super().form_valid(form)
 
