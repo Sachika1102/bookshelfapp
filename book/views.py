@@ -8,6 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.db.models import Avg
 from django.core.paginator import Paginator
+from django.views.generic import UpdateView
 
 
 class ListBookView(generic.ListView):
