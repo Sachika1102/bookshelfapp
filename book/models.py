@@ -13,6 +13,7 @@ RATE_CHOICES = [(x, str(x)) for x in range(0, MAX_RATE + 1)]
 
 
 class Shelf(models.Model):
+    name = models.CharField(max_length=100, default="Default Shelf")
     title = models.CharField(max_length=100)
     text = models.TextField()
     thumbnail = models.ImageField(null=True, blank=True)
