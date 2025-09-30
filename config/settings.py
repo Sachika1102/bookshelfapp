@@ -17,6 +17,7 @@ import dj_database_url
 
 # 環境変数を管理するためのenvオブジェクト作成
 env = environ.Env()
+environ.Env.read_env()
 # .envファイルの読み込み
 env.read_env('.env')
 # .envファイルからSECRET_KEYを読み込み
@@ -36,7 +37,12 @@ DATABASES = {
         # 'PASSWORD': env('DATABASE_PASSWORD', default='password'),
         # 'HOST': env('DATABASE_HOST', default='localhost'),
         # 'PORT': env('DATABASE_PORT', default='5432'),
-        'default': dj_database_url.config(default=env('DATABASE_URL'))
+        'default': dj_database_url.config(
+            default=env(
+                'DATABASE_URL',
+                default='sqlite:///db.sqlite3'  # ← デフォルトをSQLiteに
+            )
+        )
     }
 }
 
