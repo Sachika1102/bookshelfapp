@@ -1,3 +1,27 @@
+# .env
+# venv
+# db.sqlite3
+
+
+# 追加
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+
+# Virtualenv
+venv/
+env/
+
+# Django stuff
+/media/
+staticfiles/
+
+# Environment variables
 .env
-venv
-db.sqlite3
+
+# VSCode
+.vscode/
+.env
